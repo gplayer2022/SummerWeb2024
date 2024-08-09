@@ -1,0 +1,206 @@
+/* 全体のレイアウトを設定する */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+p, ul, ol {
+  /* 行間を設定する */
+  line-height: 1.8;
+}
+
+/* リンクの基本的な設定をする */
+a:link, a:visited {
+  text-decoration: none;
+  color: #00c4c4;
+}
+a:hover, a:active {
+  text-decoration: none;
+  color: #ffaa00;
+}
+
+/* 全ページの背景 */
+.body {
+  background-color: #f1f1f1;
+}
+
+/* ナビゲーションのレイアウト */
+.main .nav {
+  position: sticky;
+  top: 0;
+}
+.main .nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+
+  margin: 0 auto 64px;
+  padding-left: 0;
+  background-color: #ecffa9;
+  list-style-type: none;
+}
+.main .nav ul li {
+  background-color: #dcff5d;
+  flex: 1;
+  text-align: center;
+}
+.main .nav ul li a {
+  display: block;
+  padding: 6px 12px;
+}
+
+/* 全ページのタイトル */
+.title {
+  font-size: 40px;
+  text-align: center;
+  color: #ff5d5d;
+}
+
+/* ヒーロー画像 */
+.title.index {
+  margin: 0;
+  padding: 500px 0;
+  background-image: url(../images/hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* サブページのタイトル */
+.title.subpage-title {
+  margin: 0;
+  padding: 4px;
+  background-color: #008376;
+  color: #f1f1f1;
+  font-size: 24px;
+}
+
+/* メイン */
+.main {
+  max-width: 1024px;
+  margin: 0 auto 64px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.main h2 {
+  border-bottom: solid 2px #ffc3c3;
+  font-size: 20px;
+}
+
+.main .section {
+  padding: 0 12px 36px;
+}
+
+.main ul {
+  padding-left: 16px;
+}
+
+/* フッタ */
+.footer p {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* リンク集ページ */
+.sub-section {
+  margin-bottom: 64px;
+}
+
+.sub-section h3 {
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #ddd;
+  font-size: 18px;
+}
+
+.sub-section ul {
+  padding-left: 1.4em;
+}
+
+/* クイズページ */
+.section ol {
+  padding-left: 1.6em;
+}
+/* 問題用レイアウト */
+.section ol input[type=radio] {
+  margin: 0 4px;
+}
+.section .monty {
+  display: flex;
+  max-width: 800px;
+  gap: 12px;
+}
+.section .monty img {
+  flex: 1;
+
+  width: 100%;
+  display: inline-block;
+}
+
+/* ボタン用 */
+.button {
+  padding: 6px 12px;
+  border: none;
+  background-color: #00c4c4;
+  box-shadow: 2px 2px 5px #ccc;
+  color: #fff;
+}
+.button:hover, .button:active {
+  background-color: #20e4e4;
+}
+.judge-tiles {
+  display: block;
+  width: 256px;
+  margin: 0 auto;
+}
+
+/* 非表示用 */
+.hidden {
+  display: none;
+}
+
+/* 歴史ページ用 */
+.table {
+  width: 100%;
+}
+.table, .table th, .section table td {
+  padding: 8px 6px;
+  border-collapse: collapse;
+  border: 1px solid #b8b8b8;
+}
+.table .year {
+  width: 5.0em;
+}
+.table thead {
+  background-color: #b8b8b8;
+}
+.table thead th {
+  font-weight: normal;
+}
+.table tr td:first-child {
+  text-align: center;
+}
+.table tbody tr:nth-child(odd) {
+  background-color: #ebffa3;
+}
+.table tbody tr:nth-child(even) {
+  background-color: #ffffea;
+}
+
+/* タイル並べ */
+.tile-container {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4px;
+}
+.tile-container .tile {
+  display: block;
+  width: 100%;
+}

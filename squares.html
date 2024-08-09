@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>タイル | Ｇプレイ屋</title>
+</head>
+
+<body class="body">
+  <header class="header">
+    <h1 class="title subpage-title">Ｇプレイ屋</h1>
+  </header>
+
+  <main class="main">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="quiz.html">クイズ</a></li>
+        <li><a href="history.html">歴史</a></li>
+        <li><a href="squares.html">タイル</a></li>
+        <li><a href="links.html">リンク集</a></li>
+      </ul>
+    </nav>
+
+    <section class="section">
+      <h2>タイル並べ</h2>
+      <p>すべての列と行で、霊夢と魔理沙の数が等しくなるように調整してください！　タイルをクリックすると魔理沙と霊夢が切り替わります。</p>
+      <p>ただし、初めから開いているタイルの絵柄は変更できません。</p>
+      <div class="tile-container">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="1" src="images/tile-marisa.png" alt="魔理沙" class="tile fixed">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="2" src="images/tile-reimu.png" alt="霊夢" class="tile fixed">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="2" src="images/tile-reimu.png" alt="霊夢" class="tile fixed">
+        <img data-image-number="2" src="images/tile-reimu.png" alt="霊夢" class="tile fixed">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+        <img data-image-number="0" src="images/tile-none.png" alt="裏" class="tile">
+      </div>
+      <p>
+        <button type="button" class="button judge-tiles" onclick="judgeTiles()">判定</button>
+      </p>
+      <div id="answer" class="hidden">
+        <p id="right">正解です！　すべてのタイルが正しく表示されました。</p>
+        <p id="wrong">不正解です！　正しく並んでいないタイルがあります。</p>
+        <p>
+          <button type="button" class="button" onclick="initializeTiles()">もう１回挑戦する！</button>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy;Ｇプレイ屋 2024</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

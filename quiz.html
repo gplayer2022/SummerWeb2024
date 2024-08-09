@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>クイズ | Ｇプレイ屋</title>
+</head>
+
+<body class="body">
+  <header class="header">
+    <h1 class="title subpage-title">Ｇプレイ屋</h1>
+  </header>
+
+  <main class="main">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="quiz.html">クイズ</a></li>
+        <li><a href="history.html">歴史</a></li>
+        <li><a href="squares.html">タイル</a></li>
+        <li><a href="links.html">リンク集</a></li>
+      </ul>
+    </nav>
+
+    <section class="section">
+      <h2>モンティ・ホール問題</h2>
+      <div class="sub-section">
+        <h3>モンティ・ホール問題とは？</h3>
+        <p>モンティ・ホール問題ってご存じですか？</p>
+        <p>
+          モンティ・ホールが司会を務めたアメリカのゲームショー番組の話がもとになっています。モンティ・ホール問題は、「われわれの直観が、いかに実際の確率と違っているか」ということを如実にあらわす好例としてよく引き合いに出されます。
+        </p>
+        <p>このゲームショー番組では、挑戦者が３枚の扉の背後に隠されている豪華景品を獲得しようと画策します。ただ、その手順にはちょっと一癖あります。次の通りです。</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>手順</h3>
+        <ol>
+          <li>３つの扉があり、そのうちの１つにだけ豪華景品が隠されています。モンティ・ホールはどの扉の裏に景品が隠されているかを知っており、挑戦者はもちろん知りません。
+            <div class="monty">
+              <img src="images/door_close.png" alt="閉じた扉">
+              <img src="images/door_close.png" alt="閉じた扉">
+              <img src="images/door_close.png" alt="閉じた扉">
+            </div>
+          </li>
+          <li>挑戦者は、自分の好きな扉を選択します。</li>
+          <li>モンティ・ホールは挑戦者が選ばなかった扉のうち、外れの方の扉を開けます。
+            <div class="monty">
+              <img src="images/door_close.png" alt="閉じた扉">
+              <img src="images/door_close.png" alt="閉じた扉">
+              <img src="images/door_open.png" alt="開いた扉">
+            </div>
+          </li>
+          <li>この後、挑戦者は残された２つの扉から、改めて自分が正解だと思う方の扉を選びなおすことができます。</li>
+        </ol>
+      </div>
+
+      <div class="sub-section">
+        <h3>問題</h3>
+        <p>さて、問題です。</p>
+        <p>挑戦者は、豪華景品を獲得するために、扉を変更すべきでしょうか？</p>
+        <form id="question">
+          <ol>
+            <li><label><input type="radio" name="choice" value="0"
+                  checked>変更しようがしまいが、確率は変わらないので、最初に選んだ扉の選択を堅持した方が気分的に後悔がない</label></li>
+            <li><label><input type="radio" name="choice" value="1">変更しようがしまいが、確率は変わらないが、心機一転、扉を変更した方が気分的に盛り上がる</label>
+            </li>
+            <li><label><input type="radio" name="choice" value="2">変更した方が景品が当たる確率は上がるので、扉を変更すべきである</label></li>
+            <li><label><input type="radio" name="choice" value="3">変更しない方が景品が当たる確率は上がるので、扉を変更すべきではない</label></li>
+          </ol>
+          <button type="button" class="button" onclick="judge()">回答する</button>
+        </form>
+      </div>
+
+      <div id="answer" class="sub-section hidden">
+        <h3>解答</h3>
+        <p id="right">正解です！</p>
+        <p id="wrong">不正解です！　正解は３です。</p>
+      </div>
+
+      <div id="comment" class="sub-section hidden">
+        <h3>解説</h3>
+        <p>挑戦者が最初に扉Ａを選んだ際、その扉Ａに景品が隠されている確率は３分の１、それ以外のＢまたはＣの扉に景品が隠されている確率は３分の２です。</p>
+        <p>モンティ・ホールが外れの扉を開けた後、挑戦者が選択を変更しなかった場合、当たる確率は３分の１のままです。一方、挑戦者が選択を変更した場合、最初に選択されなかったＢまたはＣの扉のいずれかに景品が隠されていた確率は３分の２だったのであり、しかも外れの扉をモンティ・ホールがわざわざ開けてくれたわけですから、もしあらかじめＢまたはＣの扉に景品が隠されていた場合、挑戦者は自動的に当たりを引くことになります。つまり、残されていた側に変更すれば、当たる確率は３分の２になります。</p>
+        <p>挑戦者は、扉を変更した場合、当たる確率が２倍になります。</p>
+        <p>ちなみに、多くの挑戦者は、選択を変更しないことを選んでいたとのことです。</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>参考</h3>
+        <ul>
+          <li>ウィキペディア「<a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BB%E3%83%9B%E3%83%BC%E3%83%AB%E5%95%8F%E9%A1%8C" target="_blank">モンティ・ホール問題</a>」</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy;Ｇプレイ屋 2024</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
