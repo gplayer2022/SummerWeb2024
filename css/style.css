@@ -138,8 +138,8 @@ a:hover, a:active {
 .section .monty img {
   flex: 1;
 
-  width: 100%;
-  display: inline-block;
+  min-width: 0;
+  display: block;
 }
 
 /* ボタン用 */
@@ -153,6 +153,7 @@ a:hover, a:active {
 .button:hover, .button:active {
   background-color: #20e4e4;
 }
+/* これだけタイルページ用のボタン */
 .judge-tiles {
   display: block;
   width: 256px;
